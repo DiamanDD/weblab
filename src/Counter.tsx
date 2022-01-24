@@ -11,6 +11,8 @@ type CounterType={
 export function Counter({counter}:CounterType) {
 
 
+
+
     return <span>{counter}</span>;
 
 }

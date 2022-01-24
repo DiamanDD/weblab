@@ -6,7 +6,6 @@ type RandomListType = {
 }
 
 export function RandomList({count}: RandomListType) {
-    console.log(count)
 
     const [arr,setArr]=useState<number[]>([])
 
@@ -22,9 +21,8 @@ export function RandomList({count}: RandomListType) {
     }
 
     useEffect(()=>{
-        console.log(arr)
         setArr(generateNumbers(count))
-    },[count])
+    },[count,])
 
 
 
