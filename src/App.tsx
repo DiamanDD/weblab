@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Counter} from './Counter';
+import {RandomList} from "./RandomList";
 
 function App() {
+
+
+    const [incr,setIncr]=useState<number>(0)
+
+    function onClickIncr(incr:number){
+        setIncr(prevState => prevState+1)
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <button onClick={()=>onClickIncr(incr)}>Инкрементировать</button>
+        <Counter counter={incr} />
+        <RandomList count={incr} />
+      </div>
   );
 }
 
