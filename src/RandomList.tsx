@@ -28,6 +28,7 @@ export function RandomList({count}: RandomListType) {
 
 
 
+
     return (
         <ul>
             {arr.map((num,index)=>(<li key={index} >{num}</li>))}
